@@ -1,1 +1,1 @@
-# ubscription-management-frontend
+# subscription-management-frontend
