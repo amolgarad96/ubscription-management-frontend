@@ -1,10 +1,11 @@
 import { useSubscriptions } from '../hooks/useSubscriptions';
-import { SubscriptionCard } from '../Component/SubscriptionCard';
+import { SubscriptionCard } from '../Component/Subscription/SubscriptionCard';
+import { SubscriptionCardSkeleton } from '../Component/Subscription/SubscriptionCardSkeleton';
 
 export function Subscriptions() {
   const { data, loading, error } = useSubscriptions();
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <SubscriptionCardSkeleton />
   if (error) return <p>Error: {error.message}</p>;
 
   const contracts = data?.subscriptions ?? [];

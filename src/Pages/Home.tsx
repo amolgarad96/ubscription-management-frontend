@@ -1,10 +1,11 @@
-import { PieChart } from "../Component/PieChart";
+import { PieChart } from "../Component/Dashboard/PieChart";
 import { useSubscriptions } from "../hooks/useSubscriptions";
+import { DashboardSkeleton } from "../Component/Dashboard/DashboardSkeleton";
 
 export function Home() {
     const { data, loading, error } = useSubscriptions();
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <DashboardSkeleton />
     if (error) return <p>Error: {error.message}</p>;
 
     const contracts = data?.subscriptions ?? [];
