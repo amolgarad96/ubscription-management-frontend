@@ -7,11 +7,20 @@
     ├── src/
     │   ├── assets/
     │   ├── Component/                   # For reusable UI and logic
-    │   │   ├── CancelModal.tsx
-    │   │   ├── PieChart.tsx
-    │   │   ├── ProtectedRoute.tsx
-    │   │   ├── StatusBadge.tsx
-    │   │   └── SubscriptionCard.tsx
+    │   │   ├── Dashboard/
+    │   │   │   ├── DashboardSkeleton.tsx
+    │   │   │   └── PieChart.tsx
+    │   │   │
+    │   │   ├── Subscription/
+    │   │   │   ├── CancelModal.tsx
+    │   │   │   ├── StatusBadge.tsx
+    │   │   │   ├── SubscriptionCard.tsx
+    │   │   │   └── SubscriptionCardSkeleton.tsx
+    │   │   │
+    │   │   ├── loading/
+    │   │   │   └── Skeleton.tsx          # while loading it looks like actual component
+    │   │   │
+    │   │   └── ProtectedRoute.tsx
     │   ├── context/
     │   │   └── AuthContext.tsx           # Add login, logout authentication
     │   ├── graphql/
@@ -65,7 +74,34 @@
     Run project using
     npm run dev
 
+# Decisions & trade-offs
 
+- React :
+  - Used React with Vite for fast development and efficient rendering.
+  - Component-based architecture helps in building reusable UI like SubscriptionCard, StatusBadge etc.
+  - due to component code becomes modular, predictable and logic is encapsulated(seperation of concern)
+  - we can use heavy operations using context api/hooks(e.g:Authentication).
+  - we can write custom hooks so as application is smaller i have used custom hooks instead Redux but     application grows we can use redux to manage global state.
+
+
+- appolo Client : 
+    - Used Apollo Client to interact with the GraphQL backend.
+    - Provides built-in hooks (useQuery, useMutation) for clean data fetching and state handling.
+    - Handles caching, loading, and error states efficiently.
+
+- Tailwind :
+    - Used Tailwind CSS for rapid UI development and consistent styling.
+    - Utility-first approach makes styling faster and responsive.
+
+  Trade-offs:
+   - Can lead to long class names
+
+- Typescript :
+    - I was chose this as programming language to know errors during compiletime instead runtime
+
+- Custom Hook :
+    - Created custom hook (e.g: useSubscriptions) to centralize API calls.
+    - Keeps components clean and reusable.
 
 # Future Improvements
 
