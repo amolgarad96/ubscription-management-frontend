@@ -1,6 +1,6 @@
 
 import { useSubscriptions } from '../hooks/useSubscriptions';
-import { SubscriptionCard } from '../Component/SubscriptionCard';
+import { SubscriptionCard } from '../Component/Subscription/SubscriptionCard';
 
 export function Dashboard() {
   const { data, loading, error } = useSubscriptions();

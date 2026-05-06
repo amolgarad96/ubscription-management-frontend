@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import type { SubscriptionContract } from '../types.js';
+import type { SubscriptionContract } from '../../types.js';
 import { StatusBadge } from './StatusBadge.js';
 import { CancelModal } from './CancelModal.js';
-import { usePauseSubscription, useResumeSubscription, useSkipDelivery, useCancelSubscription } from '../hooks/useSubscriptions.js';
+import { usePauseSubscription, useResumeSubscription, useSkipDelivery, useCancelSubscription } from '../../hooks/useSubscriptions.js';
 
 interface SubscriptionCardProps {
   contract: SubscriptionContract;
