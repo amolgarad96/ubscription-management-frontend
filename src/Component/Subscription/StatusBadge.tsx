@@ -1,4 +1,4 @@
-import type { SubscriptionStatus } from '../types'
+import type { SubscriptionStatus } from '../../types'
 const STATUS_CONFIG: Record<SubscriptionStatus, { label: string; color: string }> = {
   ACTIVE: { label: 'Active', color: '#166534' },
   PAUSED: { label: 'Paused', color: '#854d0e' },
