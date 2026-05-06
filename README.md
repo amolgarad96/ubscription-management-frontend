@@ -71,6 +71,8 @@
     Create a .env file in the root:
     add keys-value based on .env.example file
 
+    use the same .env credentials for login
+
     Run project using
     npm run dev
 
